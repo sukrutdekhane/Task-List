@@ -8,7 +8,7 @@ function Form(){
     const navigate=useNavigate();
     return <div class="container">
     <form onSubmit={()=>{
-      navigate('/nextPage')
+      navigate('/HomePage')
     }}>
       <div class="container">
         <h2>Login here</h2>
