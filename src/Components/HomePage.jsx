@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Table from "./Table";
 
 function HomePage(){
-  return <Table />
+  const [arr,setArr]=useState([]);
+
+  function addItem(inputValue){
+
+      for(let i=0;i<arr.length;i++)
+      console.log(arr[i])
+    
+      setArr((prevValue)=>{
+        return [...prevValue,inputValue]
+      })
+  }
+    
+  return <Table data={arr} add={addItem}/>
 }
 
 export default HomePage
