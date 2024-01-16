@@ -1,5 +1,4 @@
 import React from "react";
-import './table.css'
 import Table from "./Table";
 
 function HomePage(){

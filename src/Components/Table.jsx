@@ -1,20 +1,49 @@
-import React from "react";
+import React,{useState} from "react";
+import './table.css'
+import TableHead from "./TableHead";
 
 function Table(){
-    return (<table>
-        <tr>
-          <th>Task</th>
-          <th>Date</th>
-        </tr>
+    const [inputValue,setInputValue]=useState({
+        Text: "",
+        Date: ""
+    })
+    function handleChange(event){
+       const newValue=event.target.value; 
+       const name=event.target.name;
+
+       setInputValue((prevValue)=>{
+        if(name==="text"){
+            return (
+                {
+                    Text: newValue,
+                    Date: prevValue.Date
+                }
+            );
+        }
+        else{
+            return (
+                {
+                    Text: prevValue.Text,
+                    Date: newValue
+                }
+            );
+        }
+       })
+    }
+    return (<>
+    <button class="add_button">Add</button>
+    <table>
+          <TableHead />
         <tr>
           <td>
-          <input type="text" name="task"/>
+          <input onChange={handleChange} type="text" name="task" value={inputValue.Text}/>
           </td>
           <td>
-          <input type="text" name="date"/>
+          <input onChange={handleChange} type="date" name="date" value={inputValue.Date}/>
           </td>
         </tr>
-      </table>);
+      </table>
+      </>);
 }
 
 export default Table
