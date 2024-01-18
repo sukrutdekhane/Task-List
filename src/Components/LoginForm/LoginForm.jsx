@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Password from "./Password";
-import Email from "./Email";
+import Input from "../Input";
 
 function LoginForm() {
     const navigate = useNavigate();
@@ -11,8 +10,8 @@ function LoginForm() {
         }}>
             <div class="container">
                 <h2>Login here</h2>
-                <Email />
-                <Password />
+                <Input label="Email" for="email" type="email" placeholder="Enter email" name="email" required />
+                <Input label="Password" for="password" type="password" placeholder="Enter password" name="password" required />
                 <button type="submit">Login</button>
             </div>
         </form>

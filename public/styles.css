@@ -1,11 +1,13 @@
-form{
+form {
   border: 3px solid #f1f1f1;
 }
 
-h2{
+h2 {
   text-align: center;
 }
-input[type=email], input[type=password] {
+
+input[type=email],
+input[type=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -28,50 +30,49 @@ button {
 .container {
   margin-top: 10%;
   margin-bottom: 10%;
-  margin-left:20%;
+  margin-left: 20%;
   margin-right: 20%;
 }
 
 
-table {
-  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 50%;
-  margin-top: 10px;
-  margin-left: 25%;
-  margin-right: 50%;
-  margin-bottom: 10%;
+.add_button {
+  width: 10%;
+  margin-left: 924px;
+  position: relative;
+  bottom: 50px;
+  top: 15px;
+  height: 40px;
 }
 
-table td,
-table th, input {
+.table {
+  display: table;
+  width: 70%;
+  border-collapse: collapse;
+}
+
+.row {
+  display: table-row;
+}
+
+input {
+  display: inline-block;
   border: 1px solid #ddd;
   padding: 8px;
+  width: 30%;
+  height: 25px;
 }
 
-table tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-table tr:hover {
-  background-color: #ddd;
-}
-
-table th, tfoot td {
-  padding-top: 12px;
-  padding-bottom: 12px;
+.cell {
+  display: table-cell;
+  border: 1px solid #ddd;
+  padding: 8px;
   text-align: center;
-  background-color: grey;
-  color: white;
 }
 
-input{
-  width: 95%;
-}
-
-.add_button{
-  width: 10%;
+.input {
   margin-top: 100px;
-  margin-bottom: 0;
-  margin-left: 924px;
+  margin-left: 5%;
+  position: relative;
+  top: 65px;
+  width: 95.5%;
 }
