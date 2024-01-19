@@ -76,3 +76,13 @@ input {
   top: 65px;
   width: 95.5%;
 }
+
+.delete_button {
+  width: 100px
+}
+
+.search_box {
+  margin-left: 52%;
+  position: relative;
+  top: 100px
+}

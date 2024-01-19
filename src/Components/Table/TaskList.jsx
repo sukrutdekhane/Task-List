@@ -11,8 +11,8 @@ function TaskList(props) {
 
 
         <div class="table">
-            {props.taskList.map((data) => {
-                return <Row task={data.task} date={data.date} />
+            {props.taskList.map((data, index) => {
+                return <Row onDelete={props.onDelete} key={index} id={index} task={data.task} date={data.date} />
             })}
         </div>
 
