@@ -11,7 +11,7 @@ function TaskInput(props) {
     function OnDateChange(event) {
         setDueDate(event.target.value);
     }
-
+    // use math.random to generate id
     function submitData() {
         const inputValue = {
             task: taskLabel,

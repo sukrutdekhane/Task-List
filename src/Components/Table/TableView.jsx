@@ -6,26 +6,32 @@ import SearchBox from "./SearchBox";
 function TableView() {
     const [taskList, setTaskList] = useState([]);
     const [taskListClone, setTaskListClone] = useState([]);
+    const [sortColumn, setSortColumn] = useState(null);
+    const [sortOrder, setSortOrder] = useState('asc');
+
+
     function addNewTask(newTask) {
         setTaskList((prevList) => {
             console.log(newTask)
-            return [...prevList, newTask]
+            const result = [...prevList, newTask]
+            setTaskListClone(result);
+            return result;
         })
     }
 
     function deleteTask(id) {
+
         setTaskList(prevList => {
-            return prevList.filter((listItem, index) => {
+            const result = prevList.filter((listItem, index) => {
                 return index !== id
             })
+            setTaskListClone(result);
+            return result;
         })
     }
 
 
     function filterTask(text) {
-
-        setTaskListClone(taskList);
-        console.log(taskListClone)
         setTaskList(prevList => {
             const result = prevList.filter((listItem, index) => {
                 console.log(listItem.task);
@@ -33,10 +39,7 @@ function TableView() {
             })
 
             if (result.length === 0) {
-                return [{
-                    task: "No such task ",
-                    date: "No such date"
-                }];
+                return [];
             }
             return result
         })
@@ -48,12 +51,44 @@ function TableView() {
         return setTaskList(taskListClone);
     }
 
+    function handleHeaderClick(column) {
+        if (sortColumn === column) {
+            if (sortOrder === 'asc') {
+                setSortOrder('desc');
+            } else if (sortOrder === 'desc') {
+                setSortColumn(null);
+                setSortOrder('original');
+            }
+        } else {
+            setSortColumn(column);
+            setSortOrder('asc');
+        }
+
+        if (sortOrder === 'original') {
+            setTaskList(taskListClone);
+            return;
+        }
+
+
+        const sortedTableData = [...taskList].sort((a, b) => {
+            const aValue = a[sortColumn];
+            const bValue = b[sortColumn];
+
+            if (sortOrder === 'asc') {
+                return aValue < bValue ? -1 : aValue > bValue ? 1 : 0;
+            } else {
+                return bValue < aValue ? -1 : bValue > aValue ? 1 : 0;
+            }
+        });
+
+        setTaskList(sortedTableData)
+    }
 
 
     return (<>
         <SearchBox filterTask={filterTask} />
         <TaskInput setList={addNewTask} restore={restoreData} />
-        <TaskList onDelete={deleteTask} taskList={taskList} />
+        <TaskList onDelete={deleteTask} taskList={taskList} handleHeaderClick={handleHeaderClick} />
     </>);
 }
 
