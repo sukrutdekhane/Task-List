@@ -5,7 +5,7 @@ import SearchBox from "./SearchBox";
 
 function TableView() {
     const [taskList, setTaskList] = useState([]);
-
+    const [taskListClone, setTaskListClone] = useState([]);
     function addNewTask(newTask) {
         setTaskList((prevList) => {
             console.log(newTask)
@@ -24,28 +24,35 @@ function TableView() {
 
     function filterTask(text) {
 
-        const len = taskList.length
-        const taskListClone = taskList
+        setTaskListClone(taskList);
+        console.log(taskListClone)
         setTaskList(prevList => {
             const result = prevList.filter((listItem, index) => {
                 console.log(listItem.task);
                 return listItem.task.includes(text) || listItem.date.includes(text)
             })
 
-            if (result.length == 0) {
-                alert("Invalid input");
-                return taskListClone
+            if (result.length === 0) {
+                return [{
+                    task: "No such task ",
+                    date: "No such date"
+                }];
             }
             return result
         })
 
     }
 
+    function restoreData() {
+        console.log(taskListClone)
+        return setTaskList(taskListClone);
+    }
+
 
 
     return (<>
         <SearchBox filterTask={filterTask} />
-        <TaskInput setList={addNewTask} />
+        <TaskInput setList={addNewTask} restore={restoreData} />
         <TaskList onDelete={deleteTask} taskList={taskList} />
     </>);
 }

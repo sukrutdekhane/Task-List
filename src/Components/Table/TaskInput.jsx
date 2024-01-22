@@ -21,12 +21,17 @@ function TaskInput(props) {
         setTaskLabel("");
         setDueDate("");
     }
+
+    function restoreData() {
+        props.restore();
+    }
     return (<>
         <div className="input">
             <Input placeholder="Task" onChange={OnTaskLabelChange} type="text" name="task" value={taskLabel} autoComplete="off" />
             <Input placeholder="Date" onChange={OnDateChange} type="date" name="date" value={dueDate} autoComplete="off" />
         </div>
         <button onClick={submitData} className="add_button">Add</button>
+        <button onClick={restoreData} className="filter_button">Clear filter</button>
     </>)
 }
 

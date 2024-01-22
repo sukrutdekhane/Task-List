@@ -4,6 +4,7 @@ import Input from "../Input"
 function SearchBox(props) {
     const [inputText, setInputText] = useState("");
     function searchText() {
+        console.log(props.filterTask(inputText));
         props.filterTask(inputText);
         setInputText("");
     }

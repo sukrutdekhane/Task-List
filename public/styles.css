@@ -70,7 +70,7 @@ input {
 }
 
 .input {
-  margin-top: 100px;
+  margin-top: 50px;
   margin-left: 5%;
   position: relative;
   top: 65px;
@@ -85,4 +85,14 @@ input {
   margin-left: 52%;
   position: relative;
   top: 100px
+}
+
+.filter_button {
+  width: 100px;
+  margin-left: 924px;
+  position: relative;
+  bottom: 50px;
+  top: -109px;
+  left: 150px;
+  height: 44px;
 }
