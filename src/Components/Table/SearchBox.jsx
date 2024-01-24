@@ -13,7 +13,7 @@ function SearchBox(props) {
         setInputText(event.target.value);
     }
     return <div className="search_box"><Input onChange={catchInput} type="text" placeholder="search" value={inputText} />
-        <button onClick={searchText} className="delete_button">search</button></div>
+        <button onClick={searchText} className="search_button">search</button></div>
 }
 
 export default SearchBox

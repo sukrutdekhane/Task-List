@@ -7,7 +7,7 @@ function TableView() {
     const [taskList, setTaskList] = useState([]);
     const [taskListClone, setTaskListClone] = useState([]);
     const [sortColumn, setSortColumn] = useState(null);
-    const [sortOrder, setSortOrder] = useState('asc');
+    const [sortOrder, setSortOrder] = useState(null);
 
 
     function addNewTask(newTask) {
@@ -57,19 +57,19 @@ function TableView() {
                 setSortOrder('desc');
             } else if (sortOrder === 'desc') {
                 setSortColumn(null);
-                setSortOrder('original');
+                setSortOrder(null);
             }
         } else {
             setSortColumn(column);
             setSortOrder('asc');
         }
 
-        if (sortOrder === 'original') {
+        if (!sortOrder) {
             setTaskList(taskListClone);
             return;
         }
 
-
+        //  TODO: move it to Utility.js file 
         const sortedTableData = [...taskList].sort((a, b) => {
             const aValue = a[sortColumn];
             const bValue = b[sortColumn];
@@ -88,7 +88,7 @@ function TableView() {
     return (<>
         <SearchBox filterTask={filterTask} />
         <TaskInput setList={addNewTask} restore={restoreData} />
-        <TaskList onDelete={deleteTask} taskList={taskList} handleHeaderClick={handleHeaderClick} />
+        <TaskList key={taskList.id} id={taskList.id} onDelete={deleteTask} taskList={taskList} handleHeaderClick={handleHeaderClick} />
     </>);
 }
 

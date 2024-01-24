@@ -14,6 +14,7 @@ function TaskInput(props) {
     // use math.random to generate id
     function submitData() {
         const inputValue = {
+            // id: Math.floor(Math.random() * 100),
             task: taskLabel,
             date: dueDate
         }
