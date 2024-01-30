@@ -76,3 +76,31 @@ input{
   width: 30%;
 }
 
+.container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 50vh;
+}
+
+.loginPage{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 20px;
+}
+
+form{
+  width: 50%;
+}
+
+.emailContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.passwordContainer{
+  display: flex;
+  flex-direction: column;
+}
+
