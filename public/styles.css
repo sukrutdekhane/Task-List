@@ -6,7 +6,7 @@ h2 {
   text-align: center;
 }
 
-input[type=email],
+/* input[type=email],
 input[type=password] {
   width: 100%;
   padding: 12px 20px;
@@ -14,72 +14,78 @@ input[type=password] {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
-}
+} */
 
 button {
   background-color: #04AA6D;
   color: white;
   padding: 14px 20px;
-  margin: 8px 0;
+  /* margin: 8px 0; */
   border: none;
   cursor: pointer;
-  width: 100%;
+  /* width: 100%; */
 }
 
 
 .container {
-  margin-top: 10%;
+  /* margin-top: 10%;
   margin-bottom: 10%;
   margin-left: 20%;
-  margin-right: 20%;
+  margin-right: 20%; */
 }
 
 
 .add_button {
-  width: 10%;
+  /* width: 10%;
   margin-left: 1030px;
   position: relative;
   bottom: 50px;
   top: -100px;
-  height: 40px;
+  height: 40px; */
 }
 
 .table {
-  display: table;
-  width: 70%;
+  display: flex;
+  flex-direction: column;
+  /* width: 70%;
   border-collapse: collapse;
-  margin-left: 180px;
+  margin-left: 180px; */
 }
 
 .row {
-  display: table-row;
+  display: flex;
 }
 
 input {
-  display: inline-block;
+  /* display: inline-block;
   border: 1px solid #ddd;
   padding: 8px;
   width: 30%;
-  height: 25px;
+  height: 25px; */
 }
 
 .cell {
-  display: table-cell;
+  /* display: table-cell;*/
+  flex-basis: 70%;
   border: 1px solid #ddd;
   padding: 8px;
-  text-align: center;
+  text-align: center; 
 }
 
-.input {
+/* #task_cell{
+  flex-grow: 2;
+} */
+
+.inputBox {
   display: flex;
-  gap: 50px;
+  gap: 50px; 
   justify-content: end;
-  margin-top: 50px;
+  /* margin-top: 50px;
   margin-left: 5%;
   position: relative;
   left: -50px;
   top: -50px;
-  width: 70%;
+  width: 70%; */ 
 }
 
 .delete_button {
@@ -88,25 +94,43 @@ input {
 
 .search_box {
   display: flex;
-  align-items: flex-end;
-  margin-left: 700px;
-  position: relative;
-  top: 210px
+  gap: 10px;
+  justify-content: flex-end;
 }
 
 .filter_button {
-  width: 100px;
+  /* width: 100px;
   margin-left: 924px;
   position: relative;
   bottom: 50px;
   top: 11px;
-  left: 150px;
+  left: 150px; */
   height: 44px;
 }
 
 .search_button {
-  width: 100px;
+  /* width: 100px;
   position: relative;
   left: 20px;
-  top: 9px;
+  top: 9px; */
+}
+
+#root{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.tableViewcontainer{
+  display: flex;
+  flex-basis: 70%;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
+
+.noRecords{
+
 }
