@@ -83,14 +83,16 @@ function TableView() {
   return (
     <div className="tableViewcontainer">
       <TaskInput setList={addNewTask} />
-      <SearchBox filterTask={filterTask} restore={restoreData} />
-      <TaskList
-        key={taskList.id}
-        id={taskList.id}
-        onDelete={deleteTask}
-        taskList={taskList}
-        handleHeaderClick={handleHeaderClick}
-      />
+      <div className="searchBoxtable">
+        <SearchBox filterTask={filterTask} restore={restoreData} />
+        <TaskList
+          key={taskList.id}
+          id={taskList.id}
+          onDelete={deleteTask}
+          taskList={taskList}
+          handleHeaderClick={handleHeaderClick}
+        />
+      </div>
     </div>
   );
 }

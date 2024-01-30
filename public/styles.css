@@ -32,19 +32,12 @@ button {
   text-align: center; 
 }
 
-/* #task_cell{
-  flex-grow: 2;
-} */
-
 .inputBox {
   display: flex;
   gap: 10px; 
   justify-content:center;
 }
 
-.delete_button {
-  width: 80px
-}
 
 .search_box {
   display: flex;
@@ -56,13 +49,30 @@ button {
   display: flex;
   justify-content: center;
   width: 100%;
-  gap: 20px;
 }
+
+.filter_button{
+  padding: 10px 10px;
+}
+
+/* .add_button{
+  padding: 2;
+} */
 
 .tableViewcontainer{
   display: flex;
   flex-basis: 70%;
   flex-direction: column;
-  gap: 30px;
+  gap: 150px;
+}
+
+.searchBoxtable{
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+input{
+  width: 30%;
 }
 
