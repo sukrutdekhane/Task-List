@@ -17,18 +17,22 @@ function SearchBox(props) {
   }
   return (
     <div className="search_box">
-      <Input
-        onChange={catchInput}
-        type="text"
-        placeholder="search"
-        value={inputText}
-      />
-      <button onClick={searchText} className="search_button">
-        search
-      </button>
-      <button onClick={restoreData} className="filter_button">
-        Clear filter
-      </button>
+      <div className="searchBox">
+        <Input
+          onChange={catchInput}
+          type="text"
+          placeholder="search"
+          value={inputText}
+        />
+      </div>
+      <div className="searchFilterbutton">
+        <button onClick={searchText} className="search_button">
+          search
+        </button>
+        <button onClick={restoreData} className="filter_button">
+          Clear filter
+        </button>
+      </div>
     </div>
   );
 }

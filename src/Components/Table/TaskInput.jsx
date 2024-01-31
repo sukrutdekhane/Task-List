@@ -25,22 +25,26 @@ function TaskInput(props) {
   return (
     <>
       <div className="inputBox">
-        <Input
-          placeholder="Task"
-          onChange={OnTaskLabelChange}
-          type="text"
-          name="task"
-          value={taskLabel}
-          autoComplete="off"
-        />
-        <Input
-          placeholder="Date"
-          onChange={OnDateChange}
-          type="date"
-          name="date"
-          value={dueDate}
-          autoComplete="off"
-        />
+        <div className="taskBox">
+          <Input
+            placeholder="Task"
+            onChange={OnTaskLabelChange}
+            type="text"
+            name="task"
+            value={taskLabel}
+            autoComplete="off"
+          />
+        </div>
+        <div className="dateBox">
+          <Input
+            placeholder="Date"
+            onChange={OnDateChange}
+            type="date"
+            name="date"
+            value={dueDate}
+            autoComplete="off"
+          />
+        </div>
         <button onClick={submitData} className="add_button">
           Add
         </button>

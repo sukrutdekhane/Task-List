@@ -33,7 +33,9 @@ function LoginForm() {
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <div className="loginButtoncontainer">
+          <button type="submit">Login</button>
+        </div>
       </form>
     </div>
   );

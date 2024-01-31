@@ -1,4 +1,5 @@
 function Input(props) {
+  console.log(props);
   return (
     <>
       {props.label ? (

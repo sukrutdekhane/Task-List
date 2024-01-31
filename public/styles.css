@@ -49,6 +49,7 @@ button {
   display: flex;
   justify-content: center;
   width: 100%;
+  height: 100vh;
 }
 
 .filter_button{
@@ -73,20 +74,23 @@ button {
 }
 
 input{
-  width: 30%;
+  padding: 8px;
+  width: 100%;
+ box-sizing: border-box;
 }
 
 .container{
   display: flex;
   width: 100%;
   justify-content: center;
-  height: 50vh;
+  height: 100vh;
+  align-items: center;
 }
 
 .loginPage{
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 30%;
   gap: 20px;
 }
 
@@ -97,10 +101,38 @@ form{
 .emailContainer{
   display: flex;
   flex-direction: column;
+  padding:10px 20px;
 }
 
 .passwordContainer{
   display: flex;
   flex-direction: column;
+  padding:10px 20px;
 }
 
+.taskBox{
+  display: flex;
+  flex-grow: 2;
+}
+
+.dateBox{
+  display: flex;
+  flex-grow: 1;
+}
+
+.searchBox{
+  display: flex;
+  justify-content: flex-end;
+  flex-basis: 30%;
+}
+
+.searchFilterbutton{
+  display: flex;
+  gap: 10px;
+}
+
+.loginButtoncontainer{
+  display: flex;
+  flex-direction: column;
+  padding:10px 20px;
+}
