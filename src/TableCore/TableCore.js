@@ -27,6 +27,15 @@ export class TableCore {
 
   setTaskList() {}
 
+  getSortColumn() {
+    console.log(this.#sortColumn);
+    return this.#sortColumn;
+  }
+
+  getSortOrder() {
+    return this.#sortOrder;
+  }
+
   addTask(newTask) {
     const NewTask = new task();
     NewTask.task = newTask.task;
